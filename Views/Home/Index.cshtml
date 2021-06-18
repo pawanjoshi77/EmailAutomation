@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Current = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Email Automation</h1>
+    <p class="lead">This Custom app to list Email and Calender Events</p>
+    @if (Request.IsAuthenticated)
+    {
+        <h4>Welcome @ViewBag.User.DisplayName!</h4>
+        <p>Use the navigation bar at the top of the page to get started.</p>
+    }
+    else
+    {
+        @Html.ActionLink("Click here to sign in", "SignIn", "Account", new { area = "" }, new { @class = "btn btn-primary btn-large" })
+    }
+</div>
